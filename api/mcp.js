@@ -4,7 +4,7 @@ import { HttpTransport } from '@tmcp/transport-http';
 import { RedisSessionManager } from '@tmcp/session-manager-redis';
 import * as v from 'valibot';
 
-export const server = new McpServer(
+const server = new McpServer(
 	{
 		name: 'tmcp-vercel-test',
 		description: 'A test server for TMCP on Vercel',
@@ -35,6 +35,8 @@ server.tool(
 		}),
 	},
 	async ({ max }) => {
+		server.refreshRoots();
+
 		const content = {
 			number: Math.floor(Math.random() * max),
 		};
