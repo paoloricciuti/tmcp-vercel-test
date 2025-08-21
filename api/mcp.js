@@ -59,6 +59,13 @@ export async function GET(request) {
 	);
 }
 
+export async function OPTIONS(request) {
+	return (
+		(await transport.respond(request)) ??
+		new Response('Not Found', { status: 404 })
+	);
+}
+
 export async function POST(request) {
 	return (
 		(await transport.respond(request)) ??
