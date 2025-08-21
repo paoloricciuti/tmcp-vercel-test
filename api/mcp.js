@@ -39,10 +39,12 @@ server.tool(
 			number: Math.floor(Math.random() * max),
 		};
 		return {
-			content: {
-				type: 'text',
-				text: JSON.stringify(content),
-			},
+			content: [
+				{
+					type: 'text',
+					text: JSON.stringify(content),
+				},
+			],
 			structuredContent: content,
 		};
 	}
