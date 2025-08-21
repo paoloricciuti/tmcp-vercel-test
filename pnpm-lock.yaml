@@ -15,8 +15,8 @@ importers:
         specifier: ^0.1.4
         version: 0.1.4(tmcp@1.10.2)(valibot@1.1.0)
       '@tmcp/session-manager-redis':
-        specifier: file:tmcp-session-manager-redis-0.1.0.tgz
-        version: file:tmcp-session-manager-redis-0.1.0.tgz
+        specifier: file:tmcp-session-manager-redis-0.1.1.tgz
+        version: file:tmcp-session-manager-redis-0.1.1.tgz
       '@tmcp/transport-http':
         specifier: file:tmcp-transport-http-0.5.4.tgz
         version: file:tmcp-transport-http-0.5.4.tgz(tmcp@1.10.2)
@@ -66,9 +66,9 @@ packages:
       tmcp: ^1.10.2
       valibot: ^1.1.0
 
-  '@tmcp/session-manager-redis@file:tmcp-session-manager-redis-0.1.0.tgz':
-    resolution: {integrity: sha512-tmFYJuwrjFDWdzCPhGzPq/mEZbpDmTgpWOVf+b6Tl21u7UT1TXg2QTB09Fu56tstrM8Yecr6T2dzztCNAy8lKQ==, tarball: file:tmcp-session-manager-redis-0.1.0.tgz}
-    version: 0.1.0
+  '@tmcp/session-manager-redis@file:tmcp-session-manager-redis-0.1.1.tgz':
+    resolution: {integrity: sha512-41CjYZ8VOyIG82KQwhgAcV2GOV5WhkGMcx/PAHwaomYqZ8OrNdKQm0G0ATYvyqHeC958qRePGrAPOvZs/9gVnQ==, tarball: file:tmcp-session-manager-redis-0.1.1.tgz}
+    version: 0.1.1
 
   '@tmcp/session-manager@file:tmcp-session-manager-0.1.0.tgz':
     resolution: {integrity: sha512-q5RN0EZmGtoTLMii8HThyNHmRXE7yuAIythZldp4SeYIa2iuKXKdUSM/ob6MUPmPT7xEwhza1dzM5DuNyTJPnw==, tarball: file:tmcp-session-manager-0.1.0.tgz}
@@ -144,7 +144,7 @@ snapshots:
       tmcp: 1.10.2
       valibot: 1.1.0
 
-  '@tmcp/session-manager-redis@file:tmcp-session-manager-redis-0.1.0.tgz':
+  '@tmcp/session-manager-redis@file:tmcp-session-manager-redis-0.1.1.tgz':
     dependencies:
       '@tmcp/session-manager': file:tmcp-session-manager-0.1.0.tgz
       redis: 5.8.2
