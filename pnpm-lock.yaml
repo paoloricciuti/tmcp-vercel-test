@@ -9,7 +9,7 @@ patchedDependencies:
     hash: e888fc9e75fd59e800398cffe7579da60b70a1d8d6d8efb804f85f636f15fa13
     path: patches/@tmcp__session-manager-redis@0.1.0.patch
   '@tmcp/transport-sse@0.2.6':
-    hash: 0ccc9cde26c0bd94259d7c6a4b4d75cec12a682ed0a8540e4cb5b7f067bb00eb
+    hash: ea7cf2f0fa1d571376d03770d199618d1feb741ec068d9494ba595e7d2ec1e5c
     path: patches/@tmcp__transport-sse@0.2.6.patch
 
 importers:
@@ -27,7 +27,7 @@ importers:
         version: 0.5.5(tmcp@1.10.2)
       '@tmcp/transport-sse':
         specifier: ^0.2.6
-        version: 0.2.6(patch_hash=0ccc9cde26c0bd94259d7c6a4b4d75cec12a682ed0a8540e4cb5b7f067bb00eb)(tmcp@1.10.2)
+        version: 0.2.6(patch_hash=ea7cf2f0fa1d571376d03770d199618d1feb741ec068d9494ba595e7d2ec1e5c)(tmcp@1.10.2)
       tmcp:
         specifier: ^1.10.2
         version: 1.10.2
@@ -166,7 +166,7 @@ snapshots:
       '@tmcp/session-manager': 0.1.0
       tmcp: 1.10.2
 
-  '@tmcp/transport-sse@0.2.6(patch_hash=0ccc9cde26c0bd94259d7c6a4b4d75cec12a682ed0a8540e4cb5b7f067bb00eb)(tmcp@1.10.2)':
+  '@tmcp/transport-sse@0.2.6(patch_hash=ea7cf2f0fa1d571376d03770d199618d1feb741ec068d9494ba595e7d2ec1e5c)(tmcp@1.10.2)':
     dependencies:
       '@tmcp/session-manager': 0.1.0
       tmcp: 1.10.2

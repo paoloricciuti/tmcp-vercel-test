@@ -1,5 +1,5 @@
 diff --git a/src/index.js b/src/index.js
-index a61c2d4500e881a73e99fe66853fb30c7f739a01..1a8aa5869baa4c44f9fbefc39b515e3146ee62b7 100644
+index a61c2d4500e881a73e99fe66853fb30c7f739a01..c4e23c6d6786c1aaa750af743277af2285e7a110 100644
 --- a/src/index.js
 +++ b/src/index.js
 @@ -210,6 +210,7 @@ export class SseTransport {
@@ -10,10 +10,12 @@ index a61c2d4500e881a73e99fe66853fb30c7f739a01..1a8aa5869baa4c44f9fbefc39b515e31
  				this.#options.sessionManager.create(session_id, controller);
  
  				// Send initial endpoint event with session info
-@@ -399,6 +400,13 @@ export class SseTransport {
+@@ -399,6 +400,15 @@ export class SseTransport {
  			request.headers.get('mcp-session-id') ||
  			this.#options.getSessionId();
  
++		console.log("adding an abort listener for session", session_id);
++
 +		request.signal.addEventListener('abort', () => {
 +			console.log(`SSE request for session ${session_id} aborted`);
 +			this.#options.sessionManager.delete(session_id);
