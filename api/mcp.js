@@ -25,7 +25,10 @@ server.tool(
 		name: 'random',
 		description: 'Returns a random number',
 		schema: v.object({
-			max: v.description(v.number(), 'The maximum number to return'),
+			max: v.pipe(
+				v.number(),
+				v.description('The maximum number to return')
+			),
 		}),
 		outputSchema: v.object({
 			number: v.number(),
