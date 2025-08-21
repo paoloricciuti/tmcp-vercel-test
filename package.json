@@ -13,15 +13,10 @@
 	"type": "module",
 	"dependencies": {
 		"@tmcp/adapter-valibot": "^0.1.4",
-		"@tmcp/session-manager-redis": "file:tmcp-session-manager-redis-0.1.1.tgz",
-		"@tmcp/transport-http": "file:tmcp-transport-http-0.5.4.tgz",
-		"@tmcp/transport-sse": "file:tmcp-transport-sse-0.2.5.tgz",
+		"@tmcp/session-manager-redis": "^0.1.0",
+		"@tmcp/transport-http": "^0.5.5",
+		"@tmcp/transport-sse": "^0.2.6",
 		"tmcp": "^1.10.2",
 		"valibot": "^1.1.0"
-	},
-	"pnpm": {
-		"overrides": {
-			"@tmcp/session-manager": "file:tmcp-session-manager-0.1.0.tgz"
-		}
 	}
 }

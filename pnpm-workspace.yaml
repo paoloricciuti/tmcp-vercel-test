@@ -1,0 +1,3 @@
+patchedDependencies:
+  '@tmcp/session-manager-redis@0.1.0': patches/@tmcp__session-manager-redis@0.1.0.patch
+  '@tmcp/transport-sse@0.2.6': patches/@tmcp__transport-sse@0.2.6.patch

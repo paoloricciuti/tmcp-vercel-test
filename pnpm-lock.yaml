@@ -4,8 +4,13 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@tmcp/session-manager': file:tmcp-session-manager-0.1.0.tgz
+patchedDependencies:
+  '@tmcp/session-manager-redis@0.1.0':
+    hash: e888fc9e75fd59e800398cffe7579da60b70a1d8d6d8efb804f85f636f15fa13
+    path: patches/@tmcp__session-manager-redis@0.1.0.patch
+  '@tmcp/transport-sse@0.2.6':
+    hash: 144e5858074c808836215fff2f008ac4e6f8352691a940bdcb973faa320dbbb5
+    path: patches/@tmcp__transport-sse@0.2.6.patch
 
 importers:
 
@@ -15,14 +20,14 @@ importers:
         specifier: ^0.1.4
         version: 0.1.4(tmcp@1.10.2)(valibot@1.1.0)
       '@tmcp/session-manager-redis':
-        specifier: file:tmcp-session-manager-redis-0.1.1.tgz
-        version: file:tmcp-session-manager-redis-0.1.1.tgz
+        specifier: ^0.1.0
+        version: 0.1.0(patch_hash=e888fc9e75fd59e800398cffe7579da60b70a1d8d6d8efb804f85f636f15fa13)
       '@tmcp/transport-http':
-        specifier: file:tmcp-transport-http-0.5.4.tgz
-        version: file:tmcp-transport-http-0.5.4.tgz(tmcp@1.10.2)
+        specifier: ^0.5.5
+        version: 0.5.5(tmcp@1.10.2)
       '@tmcp/transport-sse':
-        specifier: file:tmcp-transport-sse-0.2.5.tgz
-        version: file:tmcp-transport-sse-0.2.5.tgz(tmcp@1.10.2)
+        specifier: ^0.2.6
+        version: 0.2.6(patch_hash=144e5858074c808836215fff2f008ac4e6f8352691a940bdcb973faa320dbbb5)(tmcp@1.10.2)
       tmcp:
         specifier: ^1.10.2
         version: 1.10.2
@@ -69,23 +74,19 @@ packages:
       tmcp: ^1.10.2
       valibot: ^1.1.0
 
-  '@tmcp/session-manager-redis@file:tmcp-session-manager-redis-0.1.1.tgz':
-    resolution: {integrity: sha512-41CjYZ8VOyIG82KQwhgAcV2GOV5WhkGMcx/PAHwaomYqZ8OrNdKQm0G0ATYvyqHeC958qRePGrAPOvZs/9gVnQ==, tarball: file:tmcp-session-manager-redis-0.1.1.tgz}
-    version: 0.1.1
+  '@tmcp/session-manager-redis@0.1.0':
+    resolution: {integrity: sha512-dhfs/QAoPI0Bdrfn1204aGAqxsR5ZODjJ7FojGWMAofPixhaHfsmrvPW9/w3ndVyp3ii+w7FMLjrjlOPqN8wMw==}
 
-  '@tmcp/session-manager@file:tmcp-session-manager-0.1.0.tgz':
-    resolution: {integrity: sha512-q5RN0EZmGtoTLMii8HThyNHmRXE7yuAIythZldp4SeYIa2iuKXKdUSM/ob6MUPmPT7xEwhza1dzM5DuNyTJPnw==, tarball: file:tmcp-session-manager-0.1.0.tgz}
-    version: 0.1.0
+  '@tmcp/session-manager@0.1.0':
+    resolution: {integrity: sha512-i5u7T6DoJeeBc2Y8Yrds1Mh87R6PPZbDXxD7r2npagYmiWgEQYwog47KYEfHjhRKaARL1YUk2DuTiXPTDpTf8Q==}
 
-  '@tmcp/transport-http@file:tmcp-transport-http-0.5.4.tgz':
-    resolution: {integrity: sha512-F9ws7zr/+yzAXqwiHe8XXyahtSyeC8WganL/DhX0uO+wo2IO/QEC1h1RNG46XSD16Qwc4e7Sp2M6qgNOcUCcYQ==, tarball: file:tmcp-transport-http-0.5.4.tgz}
-    version: 0.5.4
+  '@tmcp/transport-http@0.5.5':
+    resolution: {integrity: sha512-WHghZd2Dtv5vg8olDmJ4GnacOtgAxdqDRj+Y1ORryp9WMlf8x/7jJFV99wt02tlr5thJmNyg/3m11jH+oH8bSw==}
     peerDependencies:
       tmcp: ^1.10.2
 
-  '@tmcp/transport-sse@file:tmcp-transport-sse-0.2.5.tgz':
-    resolution: {integrity: sha512-OE180Eef1kpPylqYh7aup7Xw4SuMohkP3z5icqiDzDk3sSYckiPV3AB1E4NjQITa2O40SQ3lqyocAaOfUBmdLA==, tarball: file:tmcp-transport-sse-0.2.5.tgz}
-    version: 0.2.5
+  '@tmcp/transport-sse@0.2.6':
+    resolution: {integrity: sha512-9YHMI3kFPQHNGNrvMbUEXoKqowmRA4gxs3xuXUqWSyn9pSusD6NM8gvZskOcQPmzwQNv0/v7sVAa3fOP3/ahtg==}
     peerDependencies:
       tmcp: ^1.10.2
 
@@ -153,21 +154,21 @@ snapshots:
       tmcp: 1.10.2
       valibot: 1.1.0
 
-  '@tmcp/session-manager-redis@file:tmcp-session-manager-redis-0.1.1.tgz':
+  '@tmcp/session-manager-redis@0.1.0(patch_hash=e888fc9e75fd59e800398cffe7579da60b70a1d8d6d8efb804f85f636f15fa13)':
     dependencies:
-      '@tmcp/session-manager': file:tmcp-session-manager-0.1.0.tgz
+      '@tmcp/session-manager': 0.1.0
       redis: 5.8.2
 
-  '@tmcp/session-manager@file:tmcp-session-manager-0.1.0.tgz': {}
+  '@tmcp/session-manager@0.1.0': {}
 
-  '@tmcp/transport-http@file:tmcp-transport-http-0.5.4.tgz(tmcp@1.10.2)':
+  '@tmcp/transport-http@0.5.5(tmcp@1.10.2)':
     dependencies:
-      '@tmcp/session-manager': file:tmcp-session-manager-0.1.0.tgz
+      '@tmcp/session-manager': 0.1.0
       tmcp: 1.10.2
 
-  '@tmcp/transport-sse@file:tmcp-transport-sse-0.2.5.tgz(tmcp@1.10.2)':
+  '@tmcp/transport-sse@0.2.6(patch_hash=144e5858074c808836215fff2f008ac4e6f8352691a940bdcb973faa320dbbb5)(tmcp@1.10.2)':
     dependencies:
-      '@tmcp/session-manager': file:tmcp-session-manager-0.1.0.tgz
+      '@tmcp/session-manager': 0.1.0
       tmcp: 1.10.2
 
   '@valibot/to-json-schema@1.3.0(valibot@1.1.0)':

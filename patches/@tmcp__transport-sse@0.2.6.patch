@@ -1,0 +1,21 @@
+diff --git a/src/index.js b/src/index.js
+index a61c2d4500e881a73e99fe66853fb30c7f739a01..df326b3155877b3ff8c022586b550097f8af5dad 100644
+--- a/src/index.js
++++ b/src/index.js
+@@ -210,6 +210,7 @@ export class SseTransport {
+ 		// Create new SSE stream
+ 		const stream = new ReadableStream({
+ 			start: (controller) => {
++				console.log(`Creating SSE stream for session ${session_id}`);
+ 				this.#options.sessionManager.create(session_id, controller);
+ 
+ 				// Send initial endpoint event with session info
+@@ -399,6 +400,8 @@ export class SseTransport {
+ 			request.headers.get('mcp-session-id') ||
+ 			this.#options.getSessionId();
+ 
++		console.log(`Handling SSE ${method} request for session ${session_id} ${url.searchParams.get('session_id') || request.headers.get('mcp-session-id')}`);
++
+ 		/**
+ 		 * @type {Response | null}
+ 		 */

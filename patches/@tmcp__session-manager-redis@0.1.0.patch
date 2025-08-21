@@ -1,0 +1,28 @@
+diff --git a/src/index.js b/src/index.js
+index f04c0a5374816a64ddfbc25677a8d5916ff9815b..94b193aecbd46eadcd2bbd0741999a0b4d21c513 100644
+--- a/src/index.js
++++ b/src/index.js
+@@ -41,12 +41,15 @@ export class RedisSessionManager {
+ 	 * @param {ReadableStreamDefaultController} controller
+ 	 */
+ 	async create(id, controller) {
++		console.log('Creating session', id);
+ 		await this.#connected;
+ 		this.#client.set(`available:session:${id}`, 'active');
+ 		this.#pub_sub_client.subscribe(`session:${id}`, (message) => {
++			console.log('new message for session', id);
+ 			controller.enqueue(this.#text_encoder.encode(message));
+ 		});
+ 		this.#pub_sub_client.subscribe(`delete:session:${id}`, () => {
++			console.log('delete session from redis', id);
+ 			controller.close();
+ 			this.#client?.del(`available:session:${id}`);
+ 		});
+@@ -56,6 +59,7 @@ export class RedisSessionManager {
+ 	 * @param {string} id
+ 	 */
+ 	async delete(id) {
++		console.log('delete session', id);
+ 		await this.#connected;
+ 		this.#pub_sub_client.unsubscribe(`session:${id}`);
+ 		this.#pub_sub_client.unsubscribe(`delete:session:${id}`);
