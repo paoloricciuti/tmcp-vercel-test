@@ -38,7 +38,6 @@ server.tool(
 		const content = {
 			number: Math.floor(Math.random() * max),
 		};
-		server.log('info');
 		return {
 			content: {
 				type: 'text',
