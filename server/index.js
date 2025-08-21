@@ -64,6 +64,6 @@ export const transport = new HttpTransport(server, {
 export const transport_sse = new SseTransport(server, {
 	cors: true,
 	endpoint: '/api/message',
-	path: '/api/mcp',
+	path: '/api/sse',
 	sessionManager: redis_session_manager,
 });
