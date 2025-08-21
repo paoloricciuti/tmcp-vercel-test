@@ -20,6 +20,9 @@ importers:
       '@tmcp/transport-http':
         specifier: file:tmcp-transport-http-0.5.4.tgz
         version: file:tmcp-transport-http-0.5.4.tgz(tmcp@1.10.2)
+      '@tmcp/transport-sse':
+        specifier: file:tmcp-transport-sse-0.2.5.tgz
+        version: file:tmcp-transport-sse-0.2.5.tgz(tmcp@1.10.2)
       tmcp:
         specifier: ^1.10.2
         version: 1.10.2
@@ -77,6 +80,12 @@ packages:
   '@tmcp/transport-http@file:tmcp-transport-http-0.5.4.tgz':
     resolution: {integrity: sha512-F9ws7zr/+yzAXqwiHe8XXyahtSyeC8WganL/DhX0uO+wo2IO/QEC1h1RNG46XSD16Qwc4e7Sp2M6qgNOcUCcYQ==, tarball: file:tmcp-transport-http-0.5.4.tgz}
     version: 0.5.4
+    peerDependencies:
+      tmcp: ^1.10.2
+
+  '@tmcp/transport-sse@file:tmcp-transport-sse-0.2.5.tgz':
+    resolution: {integrity: sha512-OE180Eef1kpPylqYh7aup7Xw4SuMohkP3z5icqiDzDk3sSYckiPV3AB1E4NjQITa2O40SQ3lqyocAaOfUBmdLA==, tarball: file:tmcp-transport-sse-0.2.5.tgz}
+    version: 0.2.5
     peerDependencies:
       tmcp: ^1.10.2
 
@@ -152,6 +161,11 @@ snapshots:
   '@tmcp/session-manager@file:tmcp-session-manager-0.1.0.tgz': {}
 
   '@tmcp/transport-http@file:tmcp-transport-http-0.5.4.tgz(tmcp@1.10.2)':
+    dependencies:
+      '@tmcp/session-manager': file:tmcp-session-manager-0.1.0.tgz
+      tmcp: 1.10.2
+
+  '@tmcp/transport-sse@file:tmcp-transport-sse-0.2.5.tgz(tmcp@1.10.2)':
     dependencies:
       '@tmcp/session-manager': file:tmcp-session-manager-0.1.0.tgz
       tmcp: 1.10.2

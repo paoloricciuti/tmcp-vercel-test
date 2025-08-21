@@ -1,0 +1,10 @@
+{
+	"functions": {
+		"api/mcp.js": {
+			"includeFiles": "server/index.js"
+		},
+		"api/message.js": {
+			"includeFiles": "server/index.js"
+		}
+	}
+}
